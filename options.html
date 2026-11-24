@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Okkazeo × BGG — réglages</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      max-width: 640px;
+      margin: 32px auto;
+      padding: 0 16px;
+      font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 28px; }
+    .sub { color: #6b7280; margin-top: 0; }
+    ol { padding-left: 20px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    input[type=password], input[type=text] {
+      flex: 1 1 280px;
+      padding: 7px 9px;
+      font: inherit;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+    }
+    button {
+      padding: 7px 12px;
+      font: inherit;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+    }
+    button.primary { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+    .status { min-height: 1.5em; margin-top: 6px; }
+    .ok { color: #15803d; }
+    .err { color: #b91c1c; }
+    code { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Okkazeo × BGG</h1>
+  <p class="sub">Affiche la note BoardGameGeek à côté des jeux vendus sur Okkazeo.</p>
+
+  <h2>1. Jeton d'accès BGG</h2>
+  <p>BGG demande un jeton pour utiliser son API (gratuit pour un usage non commercial) :</p>
+  <ol>
+    <li>Connecte-toi sur <a href="https://boardgamegeek.com" target="_blank" rel="noopener">boardgamegeek.com</a>.</li>
+    <li>Va sur <a href="https://boardgamegeek.com/applications" target="_blank" rel="noopener">boardgamegeek.com/applications</a> et enregistre une application (usage personnel, non commercial). La validation par BGG peut prendre quelques jours.</li>
+    <li>Une fois l'application validée, crée un jeton (« token ») et colle-le ci-dessous.</li>
+  </ol>
+  <label for="token">Jeton</label>
+  <div class="row">
+    <input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="Colle ton jeton BGG ici">
+    <button id="toggle" type="button">Afficher</button>
+    <button id="save" type="button" class="primary">Enregistrer</button>
+    <button id="test" type="button">Tester</button>
+  </div>
+  <div id="tokenStatus" class="status"></div>
+
+  <h2>2. Accès à boardgamegeek.com</h2>
+  <p>L'extension doit pouvoir contacter boardgamegeek.com. Firefox peut demander de l'autoriser.</p>
+  <div class="row">
+    <button id="perm" type="button">Autoriser l'accès</button>
+    <span id="permStatus"></span>
+  </div>
+
+  <h2>Cache</h2>
+  <p>Les notes sont gardées 14 jours, les jeux introuvables 3 jours, pour limiter les appels à BGG.</p>
+  <p id="stats">…</p>
+  <div class="row">
+    <button id="clearCache" type="button">Vider le cache</button>
+    <button id="clearOverrides" type="button">Effacer mes corrections</button>
+  </div>
+  <div id="cacheStatus" class="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* Okkazeo × BGG — all classes prefixed with okb- */
+
+.okb {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin: 2px 0 2px 6px;
+  vertical-align: middle;
+  white-space: nowrap;
+  font: 600 12px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.okb-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  background: #6b7280;
+}
+
+.okb-badge small {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.okb-badge.okb-loading {
+  background: #d1d5db;
+  color: #4b5563 !important;
+  cursor: progress;
+}
+
+.okb-badge.okb-approx {
+  border: 1px dashed rgba(0, 0, 0, 0.55);
+}
+
+.okb-badge.okb-muted {
+  opacity: 0.6;
+}
+
+.okb-badge.okb-error {
+  background: #b45309;
+}
+
+.okb-edit {
+  all: unset;
+  cursor: pointer;
+  padding: 0 3px;
+  font-size: 11px;
+  color: #555;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.okb:hover .okb-edit,
+.okb-edit:focus-visible {
+  opacity: 0.85;
+}
+
+/* Rating colours (close to BGG's own scale) */
+.okb-r8 { background: #186b40 !important; }
+.okb-r75 { background: #1d804c !important; }
+.okb-r7 { background: #1978b3 !important; }
+.okb-r65 { background: #5369a2 !important; }
+.okb-r6 { background: #5d3c9c !important; }
+.okb-rlow { background: #b2151f !important; }
+.okb-rnone { background: #6b7280; }
+
+/* Detailed panel on ad / game pages */
+
+.okb-panel {
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  max-width: 520px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #1f2937;
+  font: 400 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-align: left;
+}
+
+.okb-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.okb-tag {
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.okb-panel-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.okb-score {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.okb-panel-info {
+  min-width: 0;
+}
+
+.okb-name {
+  display: block;
+  color: #111827 !important;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.okb-name:hover {
+  text-decoration: underline !important;
+}
+
+.okb-facts {
+  margin-top: 2px;
+  color: #4b5563;
+}
+
+.okb-panel-warn {
+  margin-top: 8px;
+  color: #92400e;
+}
+
+.okb-panel-msg a {
+  color: #1d4ed8;
+}
+
+.okb-panel-foot {
+  margin-top: 6px;
+}
+
+.okb-link-btn {
+  all: unset;
+  cursor: pointer;
+  color: #1d4ed8;
+  font-size: 12px;
+  text-decoration: underline;
+}
